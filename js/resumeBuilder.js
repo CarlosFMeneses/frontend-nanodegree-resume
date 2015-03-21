@@ -1,10 +1,10 @@
-var formattedName, formattedRole, name, role;
+var s = "audacity";
 
-name = "Carlos F. Meneses";
-role = "Java Programer";
+var udacityizer = function(s) {  
+    s = s[1].toUpperCase() + s.slice(2);
+    
+    
+    return s;
+};
 
-formattedName = HTMLheaderName.replace("%data%", name);
-formattedRole = HTMLheaderRole.replace("%data%", role);
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+console.log(udacityizer(s));
