@@ -10,7 +10,7 @@ var bio = {
 	},
 	"welcomeMessage": "Greetings and Salutations!",
 	"skills": [
-		"Computer Programing", "Graphic Design", "Photography"
+		"Computer Programing", "Web Development", "Graphic Design", "Photography"
 	],
 	"bioPic": "images/fry.jpg"
 }
@@ -73,3 +73,19 @@ var projects = {
 		}
 	]
 }
+
+if (bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkill);
+};
