@@ -1,5 +1,5 @@
 var bio = {
-	"name": "Carlos F. Meneses",
+	"name": "Carlos Meneses",
 	"role": "Java Projrammer",
 	"contacts": {
 		"mobile": "(908)505-5097",
@@ -149,9 +149,11 @@ $("#header").prepend([formattedName]);
 $('#main').append(internationalizeButton);
 
 function inName() {
-	var finalName = bio.name;
-	finalName = finalName.split(" ");
-	finalName = finalName[0][0].toUpperCase() + 
-		finalName[0].slice(1).toLowerCase() + " " + finalName[1].toUpperCase();
-	return finalName;
+	origName = bio.name;
+	newName = origName.trim().split(" ");
+	newName[1] = newName[1].toUpperCase();
+	newName[0] = newName[0].slice(0,1).toUpperCase() + 
+		newName[0].slice(1).toLowerCase();
+
+	return newName[0] + " " + newName[1];
 }
