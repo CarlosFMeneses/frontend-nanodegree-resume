@@ -142,3 +142,16 @@ function locationizer(work_obj) {
 }
 
 console.log(locationizer(work));
+
+var formattedName = HTMLheaderName.replace("%data%", bio.name);
+$("#header").prepend([formattedName]);
+
+$('#main').append(internationalizeButton);
+
+function inName() {
+	var finalName = bio.name;
+	finalName = finalName.split(" ");
+	finalName = finalName[0][0].toUpperCase() + 
+		finalName[0].slice(1).toLowerCase() + " " + finalName[1].toUpperCase();
+	return finalName;
+}
