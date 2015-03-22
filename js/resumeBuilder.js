@@ -52,18 +52,21 @@ var work = {
 		{
 			"employer": "CueProductions",
 			"title": "Web Developer",
+			"location": "Elizabeth, NJ",
 			"dates": "2007 - Present",
 			"description": "Design, develop, and maitain web sites, using XML, HTML, CSS, JavaScript",
 		},
 		{
 			"employer": "Adecco Creative",
 			"title": "Graphic Designer",
+			"location": "New York, NY",
 			"dates": "2008 - 2013",
 			"description": "Worked as creative talent for various companies. Used Adobe CS6 software package to design for print and web.",
 		},
 		{
 			"employer": "Bill Smith Studio",
 			"title": "Print Production Specialist",
+			"location": "New York, NY",
 			"dates": "2002 - 2004",
 			"description": "Worked producing printed educational material for k-12 schools, using Adobe CS6."
 		}
@@ -126,3 +129,16 @@ $(document).click(function(loc) {
 
 	logClicks(x,y);
 });
+
+function locationizer(work_obj) {
+	var locationArray = [];
+
+	for (job in work_obj.jobs) {
+		var newLocation = work_obj.jobs[job].location;
+		locationArray.push(newLocation);
+	}
+
+	return locationArray;
+}
+
+console.log(locationizer(work));
