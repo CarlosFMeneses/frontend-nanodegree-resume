@@ -10,7 +10,7 @@ var bio = {
 	},
 	"welcomeMessage": "Greetings and Salutations!",
 	"skills": [
-		"Computer Programing", "Web Development", "Graphic Design", "Photography"
+		"Core Java", "XML, HTML, CSS, JS", "Graphic Design", "Photography"
 	],
 	"bioPic": "images/fry.jpg"
 }
@@ -50,6 +50,12 @@ var education = {
 var work = {
 	"jobs": [
 		{
+			"employer": "CueProductions",
+			"title": "Web Developer",
+			"dates": "2007 - Present",
+			"description": "Design, develop, and maitain web sites",
+		},
+		{
 			"employer": "Adecco Creative",
 			"title": "Graphic Designer",
 			"dates": "2008 - 2013",
@@ -57,7 +63,7 @@ var work = {
 		},
 		{
 			"employer": "Bill Smith Studio",
-			"title": "Graphic Designer",
+			"title": "Print Production Specialist",
 			"dates": "2002 - 2004",
 			"description": "Worked producing printed educational material for k-12 schools, using Adobe CS6."
 		}
@@ -89,3 +95,15 @@ if (bio.skills.length > 0) {
 	var formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
 	$("#skills").append(formattedSkill);
 };
+
+for (job in work.jobs) {
+	$("#workExperience").append(HTMLworkStart);
+
+	var formattedEmployer = HTMLworkEmployer.replace 
+		("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace 
+		("%data%", work.jobs[job].title);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+	$(".work-entry:last").append(formattedEmployerTitle);
+}
