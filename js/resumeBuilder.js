@@ -53,13 +53,13 @@ var work = {
 			"employer": "CueProductions",
 			"title": "Web Developer",
 			"dates": "2007 - Present",
-			"description": "Design, develop, and maitain web sites",
+			"description": "Design, develop, and maitain web sites, using XML, HTML, CSS, JavaScript",
 		},
 		{
 			"employer": "Adecco Creative",
 			"title": "Graphic Designer",
 			"dates": "2008 - 2013",
-			"description": "Worked as creative talent for various companies. Used Adobe CS6 software package to design art for print and web.",
+			"description": "Worked as creative talent for various companies. Used Adobe CS6 software package to design for print and web.",
 		},
 		{
 			"employer": "Bill Smith Studio",
@@ -106,4 +106,12 @@ for (job in work.jobs) {
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
 
 	$(".work-entry:last").append(formattedEmployerTitle);
+
+	var formattedDates = HTMLworkDates.replace
+		("%data%", work.jobs[job].dates);
+	$(".work-entry:last").append(formattedDates);
+
+	var formattedDescription = HTMLworkDescription.replace
+		("%data%", work.jobs[job].description);
+	$(".work-entry:last").append(formattedDescription);
 }
